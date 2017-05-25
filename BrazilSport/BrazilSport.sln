@@ -1,0 +1,48 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BrazilSport", "BrazilSport\BrazilSport.csproj", "{A2AF704F-76AD-4B3E-B04D-6A734C6EF180}"
+EndProject
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "BrazilSportWebApp", "..\BrazilSportWebApp\", "{D4398E22-BA7D-43F6-B4A2-4478FFC9842E}"
+	ProjectSection(WebsiteProperties) = preProject
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.5.2"
+		Debug.AspNetCompiler.VirtualPath = "/localhost_49868"
+		Debug.AspNetCompiler.PhysicalPath = "..\BrazilSportWebApp\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_49868\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/localhost_49868"
+		Release.AspNetCompiler.PhysicalPath = "..\BrazilSportWebApp\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_49868\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		VWDPort = "49868"
+		SlnRelativePath = "..\BrazilSportWebApp\"
+		DefaultWebSiteLanguage = "Visual C#"
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A2AF704F-76AD-4B3E-B04D-6A734C6EF180}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A2AF704F-76AD-4B3E-B04D-6A734C6EF180}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A2AF704F-76AD-4B3E-B04D-6A734C6EF180}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A2AF704F-76AD-4B3E-B04D-6A734C6EF180}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D4398E22-BA7D-43F6-B4A2-4478FFC9842E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D4398E22-BA7D-43F6-B4A2-4478FFC9842E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D4398E22-BA7D-43F6-B4A2-4478FFC9842E}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+		{D4398E22-BA7D-43F6-B4A2-4478FFC9842E}.Release|Any CPU.Build.0 = Debug|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
