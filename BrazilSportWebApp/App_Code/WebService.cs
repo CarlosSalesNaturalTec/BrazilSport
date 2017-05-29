@@ -2,10 +2,6 @@
 using System.Web.Services;
 using System.Data.SqlClient;
 
-
-/// <summary>
-/// Summary description for WebService
-/// </summary>
 [WebService(Namespace = "http://tempuri.org/")]
 [WebServiceBinding(ConformsTo = WsiProfiles.BasicProfile1_1)]
 // To allow this Web Service to be called from script, using ASP.NET AJAX, uncomment the following line. 
@@ -26,7 +22,7 @@ public class WebService : System.Web.Services.WebService
         string Identificador_msg = "0";
 
         // localiza usuario
-        string stringSelect = "select senha,nome from tbl_usuarios where usuario = '" + user + "'";
+        string stringSelect = "select senha,nome,ID_user from tbl_usuarios where usuario = '" + user + "'";
         OperacaoBanco Identificador_Operacao = new OperacaoBanco();
         System.Data.SqlClient.SqlDataReader Identificador_rcrdset = Identificador_Operacao.Select(stringSelect);
         while (Identificador_rcrdset.Read())
@@ -40,7 +36,7 @@ public class WebService : System.Web.Services.WebService
                 int vValida3 = Convert.ToInt16(vValida1) * Convert.ToInt16(vValida2);
                 string vValida4 = vValida3.ToString();
 
-                Identificador_msg = "Index.aspx?p1=" + vValida4 + "&p2=" + Convert.ToString(Identificador_rcrdset[1]);
+                Identificador_msg = "Painel.aspx?p1=" + vValida4 + "&p2=" + Convert.ToString(Identificador_rcrdset[1]) + "&p3=" + Convert.ToString(Identificador_rcrdset[2]);
 
             }
             else

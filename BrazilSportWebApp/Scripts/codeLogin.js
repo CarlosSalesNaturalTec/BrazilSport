@@ -1,4 +1,6 @@
-﻿document.getElementById('inputUser').focus();
+﻿window.onload = function () {
+    document.getElementById('inputUser').focus();
+}
 
 function TentarLogin() {
 
@@ -35,8 +37,7 @@ function OnSuccess(response) {
             document.getElementById('divLogin').style.display = "none";
             break;
         default:
-            alert('ok');
-            //window.location.href = linkurl;
+            window.location.href = response.d;
             break;
     }
 
