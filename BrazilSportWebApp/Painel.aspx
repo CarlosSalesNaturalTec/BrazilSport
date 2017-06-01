@@ -49,7 +49,7 @@
             <div class="w3-dropdown-hover w3-right">
                 <button class="w3-button">Atletas</button>
                 <div class="w3-dropdown-content w3-bar-block w3-card-4">
-                    <a href="#" class="w3-bar-item w3-button">Cadastro de Atletas</a>
+                    <a href="Atletas_Listagem.aspx" target="iframe" class="w3-bar-item w3-button">Cadastro de Atletas</a>
                     <a href="#" class="w3-bar-item w3-button">Documentação</a>
                     <a href="#" class="w3-bar-item w3-button">Pesquisa</a>
                 </div>
