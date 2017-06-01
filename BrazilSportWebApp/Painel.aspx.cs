@@ -1,14 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.UI;
-using System.Web.UI.WebControls;
 
 public partial class Painel : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
+
         string vValida1, vValida2;
         vValida1 = DateTime.Now.ToString("dd");
         vValida2 = DateTime.Now.ToString("MM");
@@ -22,10 +18,9 @@ public partial class Painel : System.Web.UI.Page
         }
         else
         {
-            lblWelcome.Text = "Bem Vindo, " + Request.QueryString["p2"];
+            lblWelcome.Text = "[" + Request.QueryString["p2"] + "]";
             Session["IDUser"] = Request.QueryString["p3"];
         }
-
 
     }
 }

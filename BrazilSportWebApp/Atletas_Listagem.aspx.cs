@@ -8,6 +8,8 @@ public partial class Atletas_Listagem : System.Web.UI.Page
     protected void Page_Load(object sender, EventArgs e)
     {
 
+        string iduser = Session["IDUser"].ToString();
+
         montaCabecalho();
         dadosCorpo();
         montaRodape();

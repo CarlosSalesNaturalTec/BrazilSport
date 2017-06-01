@@ -10,6 +10,14 @@
 
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
 </head>
 <body>
 
@@ -18,7 +26,7 @@
         <!-- Menu -->
         <div class="w3-bar w3-light-grey">
 
-            <a class="w3-bar-item w3-small w3-text-blue">
+            <a class="w3-bar-item w3-small w3-text-green">
                 <asp:Literal ID="lblWelcome" runat="server"></asp:Literal></a>
 
             <a href="#" class="w3-bar-item w3-button w3-right" onclick="sair()">Sair <i class="fa fa-sign-out"></i></a>
@@ -55,6 +63,8 @@
                 </div>
             </div>
 
+            <a href="Home.aspx" target="iframe" class="w3-bar-item w3-button w3-right"><i class="fa fa-home"></i></a>
+
 
         </div>
     </div>
@@ -68,20 +78,14 @@
     <!-- Footer -->
     <div class="w3-bottom">
         <div class="w3-bar w3-center w3-bottom w3-black">
-            <h6 class="w3-small">Powered by &nbsp;
+            <h6 class="w3-small">Desenvolvido por &nbsp;
                 <img src="images/brazilsport_logo_small.png" />
             </h6>
         </div>
     </div>
 
-    <script type="text/javascript">
-        function sair() {
-            var r = confirm("SAIR ?");
-            if (r == true) {
-                window.open('Default.aspx', '_parent');
-            }
-        }
-    </script>
+    <!-- Scripts Diversos -->
+    <script type="text/javascript" src="Scripts/codePainel.js"></script>
 
 </body>
 </html>
