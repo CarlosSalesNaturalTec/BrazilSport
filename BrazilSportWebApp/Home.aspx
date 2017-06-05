@@ -9,17 +9,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-
-    <style>
-        body {
-            background-color: #2f2a2a;
-        }
-    </style>
-
+   
 </head>
 <body>
-    <div>
-        <img src="images/brazilsport_logo.png" class="w3-display-middle w3-animate-fading" />
+    <div class="w3-container">
+
+        <img src="images/fundo.jpg" class="w3-display-middle" />
+        <img src="images/brazilsport_logo.png" class="w3-display-middle" />
 
     </div>
 </body>

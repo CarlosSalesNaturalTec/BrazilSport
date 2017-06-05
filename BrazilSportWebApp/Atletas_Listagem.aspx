@@ -5,7 +5,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 
 <head runat="server">
-    <title></title>
+    <title>Listagem de Atletas - BrazilSport</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
@@ -19,19 +19,27 @@
     <!-- Latest compiled JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
+    <style>
+        body {
+            background-image: url("images/fundo.jpg");
+        }
+    </style>
+
 </head>
 <body>
     <div>
-        <header class="w3-container w3-green w3-text-yellow w3-center w3-padding-small">
+        <header class="w3-container w3-green w3-center w3-padding-small">
             <h4><strong>Cadastro de Atletas</strong></h4>
         </header>
     </div>
 
     <br />
 
-    <div class="w3-container w3-border w3-round w3-padding-16" style="margin-left:2%; margin-right:2%">
-        <button class="w3-btn w3-green">Novo Atleta</button>
-        <small>Total de Atletas Cadastrados: <asp:Literal ID="lblTotalRegistros" runat="server"></asp:Literal></small>
+    <div class="w3-container w3-border w3-round w3-padding-16" style="margin-left: 2%; margin-right: 2%">
+        <small><i class="fa fa-users fa-2x"></i>&nbsp;&nbsp;Total de Atletas Cadastrados:
+            <asp:Literal ID="lblTotalRegistros" runat="server"></asp:Literal></small>
+        &nbsp;&nbsp;
+        <button class="w3-btn w3-round w3-green w3-right" onclick="NovoRegistro()"><i class="fa fa-plus"></i>&nbsp;Novo Atleta</button>
     </div>
 
     <br />
@@ -41,6 +49,9 @@
         <asp:Literal ID="Literal1" runat="server"></asp:Literal>
         <!-- Planilha  -->
     </div>
+
+
+    <script type="text/javascript" src="Scripts/codeAtleta_Listagem.js"></script>
 
 </body>
 </html>

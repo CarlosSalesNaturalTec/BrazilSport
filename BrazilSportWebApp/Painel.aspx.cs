@@ -18,7 +18,7 @@ public partial class Painel : System.Web.UI.Page
         }
         else
         {
-            lblWelcome.Text = "[" + Request.QueryString["p2"] + "]";
+            lblWelcome.Text = Request.QueryString["p2"];
             Session["IDUser"] = Request.QueryString["p3"];
         }
 

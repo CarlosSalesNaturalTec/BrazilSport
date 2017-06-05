@@ -4,10 +4,12 @@ using System.Text;
 public partial class Atletas_Listagem : System.Web.UI.Page
 {
     StringBuilder str = new StringBuilder();
+    int TotaldeRegistros = 0;
 
     protected void Page_Load(object sender, EventArgs e)
     {
 
+        //caso não esteja logado, gera um erro em tempo de execução e vai para página de login
         string iduser = Session["IDUser"].ToString();
 
         montaCabecalho();
@@ -47,7 +49,7 @@ public partial class Atletas_Listagem : System.Web.UI.Page
         while (dados.Read())
         {
             string Coluna0 = Convert.ToString(dados[0]); //id atleta
-
+        
             string Coluna1 = Convert.ToString(dados[1]);
             string Coluna2 = Convert.ToString(dados[2]);
             string Coluna3 = Convert.ToString(dados[3]);
@@ -65,8 +67,11 @@ public partial class Atletas_Listagem : System.Web.UI.Page
                 "</tr>";
 
             str.Append(stringcomaspas);
+            TotaldeRegistros += 1;
         }
         ConexaoBancoSQL.fecharConexao();
+
+        lblTotalRegistros.Text = TotaldeRegistros.ToString();
 
     }
 

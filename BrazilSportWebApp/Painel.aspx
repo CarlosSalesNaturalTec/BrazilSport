@@ -21,25 +21,21 @@
 </head>
 <body>
 
-    <!-- Corpo -->
-    <div>
-        <!-- Menu -->
-        <div class="w3-bar w3-light-grey">
+    <!-- Menu -->
+    <div> 
+        <div class="w3-bar w3-black">
 
-            <a class="w3-bar-item w3-small w3-text-green">
-                <asp:Literal ID="lblWelcome" runat="server"></asp:Literal></a>
-
-            <a href="#" class="w3-bar-item w3-button w3-right" onclick="sair()">Sair <i class="fa fa-sign-out"></i></a>
+            <a href="#" class="w3-bar-item w3-btn w3-hover-green w3-right" onclick="sair()">Sair <i class="fa fa-sign-out"></i></a>
 
             <div class="w3-dropdown-hover w3-right">
-                <button class="w3-button">Relatórios</button>
+                <button class="w3-btn w3-hover-green">Relatórios</button>
                 <div class="w3-dropdown-content w3-bar-block w3-card-4">
                     <a href="#" class="w3-bar-item w3-button">Centros de Custos</a>
                 </div>
             </div>
 
             <div class="w3-dropdown-hover w3-right">
-                <button class="w3-button">Fnanceiro</button>
+                <button class="w3-btn w3-hover-green">Fnanceiro</button>
                 <div class="w3-dropdown-content w3-bar-block w3-card-4">
                     <a href="#" class="w3-bar-item w3-button">Contas a Pagar</a>
                     <a href="#" class="w3-bar-item w3-button">Contas a Receber</a>
@@ -47,7 +43,7 @@
             </div>
 
             <div class="w3-dropdown-hover w3-right">
-                <button class="w3-button">Clubes</button>
+                <button class="w3-btn w3-hover-green">Clubes</button>
                 <div class="w3-dropdown-content w3-bar-block w3-card-4">
                     <a href="#" class="w3-bar-item w3-button">Cadastro de Clubes</a>
                     <a href="#" class="w3-bar-item w3-button">Pesquisa</a>
@@ -55,7 +51,7 @@
             </div>
 
             <div class="w3-dropdown-hover w3-right">
-                <button class="w3-button">Atletas</button>
+                <button class="w3-btn w3-hover-green">Atletas</button>
                 <div class="w3-dropdown-content w3-bar-block w3-card-4">
                     <a href="Atletas_Listagem.aspx" target="iframe" class="w3-bar-item w3-button">Cadastro de Atletas</a>
                     <a href="#" class="w3-bar-item w3-button">Documentação</a>
@@ -63,8 +59,7 @@
                 </div>
             </div>
 
-            <a href="Home.aspx" target="iframe" class="w3-bar-item w3-button w3-right"><i class="fa fa-home"></i></a>
-
+            <a href="Home.aspx" target="iframe" class="w3-bar-item w3-btn w3-hover-green w3-right"><i class="fa fa-home"></i></a>
 
         </div>
     </div>
@@ -73,14 +68,16 @@
     <div>
         <iframe src="Home.aspx" width="100%" height="820px" frameborder="0" name="iframe">Atualize seu Navegador!</iframe>
     </div>
-    <!-- page content -->
 
     <!-- Footer -->
     <div class="w3-bottom">
-        <div class="w3-bar w3-center w3-bottom w3-black">
-            <h6 class="w3-small">Desenvolvido por &nbsp;
-                <img src="images/brazilsport_logo_small.png" />
-            </h6>
+        <div class="w3-bar w3-black">
+            <div class="w3-left">
+                <h6 class="w3-small" style="margin-left:14px"><i class="fa fa-user w3-small w3-text-green"></i>&nbsp;Usuário: <asp:Label ID="lblWelcome" CssClass="w3-text-green" runat="server"></asp:Label></h6>
+            </div>
+            <div class="w3-right">
+                <h6 class="w3-small" style="margin-right:14px" ><img src="images/brazilsport_logo_small.png" class="w3-animate-fading" /></h6>
+            </div>
         </div>
     </div>
 
