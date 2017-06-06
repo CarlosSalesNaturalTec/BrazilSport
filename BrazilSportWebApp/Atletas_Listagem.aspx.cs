@@ -10,7 +10,7 @@ public partial class Atletas_Listagem : System.Web.UI.Page
     {
 
         //caso não esteja logado, gera um erro em tempo de execução e vai para página de login
-        string iduser = Session["IDUser"].ToString();
+        string iduser = Session["UserID"].ToString();
 
         montaCabecalho();
         dadosCorpo();

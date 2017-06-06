@@ -41,7 +41,7 @@
             <div class="form-group">
 
                 <label for="input1" class="col-md-1 control-label">Nome</label>
-                <div class="col-md-8">
+                <div class="col-md-6">
                     <input type="text" class="form-control" id="input1">
                 </div>
 
@@ -55,7 +55,7 @@
             <div class="form-group">
 
                 <label for="input3" class="col-md-1 control-label">Nascimento</label>
-                <div class="col-md-3">
+                <div class="col-md-2">
                     <input type="date" class="form-control" id="input3">
                 </div>
 
@@ -65,7 +65,7 @@
                 </div>
 
                 <label for="input5" class="col-md-1 control-label">Registro CBF</label>
-                <div class="col-md-3">
+                <div class="col-md-2">
                     <input type="text" class="form-control" id="input5">
                 </div>
 
@@ -74,7 +74,7 @@
             <div class="form-group">
 
                 <label for="input6" class="col-md-1 control-label">Clube</label>
-                <div class="col-md-6">
+                <div class="col-md-3">
                     <input type="text" class="form-control" id="input6">
                 </div>
 
@@ -90,12 +90,12 @@
 
             </div>
 
-            <legend></legend>
+            <hr />
 
             <div class="form-group">
                 <div class="col-md-3 col-md-offset-1">
-                    <button type="reset" class="btn btn-primary" onclick="cancelar()"><i class="fa fa-undo"></i>VOLTAR</button>
-                    <button type="button" class="btn btn-success" onclick="SalvarRegistro()" id="btSalvar"><i class="fa fa-save"></i>SALVAR</button>
+                    <button type="button" class="w3-btn w3-round w3-border w3-red" onclick="cancelar()"><i class="fa fa-undo"></i>&nbsp;VOLTAR</button>
+                    <button type="button" class="w3-btn w3-round w3-border w3-green" onclick="SalvarRegistro()" id="btSalvar"><i class="fa fa-save"></i>&nbsp;SALVAR</button>
                 </div>
             </div>
 

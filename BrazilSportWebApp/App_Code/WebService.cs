@@ -36,7 +36,7 @@ public class WebService : System.Web.Services.WebService
                 int vValida3 = Convert.ToInt16(vValida1) * Convert.ToInt16(vValida2);
                 string vValida4 = vValida3.ToString();
 
-                Identificador_msg = "Painel.aspx?p1=" + vValida4 + "&p2=" + Convert.ToString(Identificador_rcrdset[1]) + "&p3=" + Convert.ToString(Identificador_rcrdset[2]);
+                Identificador_msg = "Login.aspx?p1=" + vValida4 + "&p2=" + Convert.ToString(Identificador_rcrdset[1]) + "&p3=" + Convert.ToString(Identificador_rcrdset[2]);
 
             }
             else
@@ -50,6 +50,28 @@ public class WebService : System.Web.Services.WebService
 
     }
 
+
+    [WebMethod]
+    public string AtletaSalvar(string param1, string param2, string param3, string param4, string param5, string param6, string param7, string param8)
+    {
+        string url;
+
+        OperacaoBanco operacao = new OperacaoBanco();
+        bool inserir = operacao.Insert(@"INSERT INTO tbl_Atletas (Nome, Apelido , posicao ) " +
+            "VALUES ('" + param1 + "', '" + param2 + "', '" + param4 + "')");
+        ConexaoBancoSQL.fecharConexao();
+
+        if (inserir == true)
+        {
+            url = "Atletas_Listagem.aspx";   
+        }
+        else
+        {
+            url = "Sorry.aspx";
+        }
+
+        return url;
+    }
 }
 
 public class ConexaoBancoSQL
