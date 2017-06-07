@@ -39,10 +39,9 @@ public partial class Atletas_Listagem : System.Web.UI.Page
 
     private void dadosCorpo()
     {
-        string stringselect = "select tbl_Atletas.ID_Atleta, tbl_Atletas.nome, tbl_Atletas.apelido, tbl_Clubes.nome as Clube, " +
-                "tbl_Atletas.nascimento, tbl_Atletas.posicao " +
-                "from tbl_Atletas INNER JOIN tbl_Clubes ON Tbl_Atletas.ID_Clube = Tbl_Clubes.ID_Clube " +
-                "order by Tbl_Atletas.Nome";
+        string stringselect = "select ID_Atleta, nome, apelido, Clube, nascimento, posicao " +
+                "from tbl_Atletas " +
+                "order by Nome";
         OperacaoBanco operacao = new OperacaoBanco();
         System.Data.SqlClient.SqlDataReader dados = operacao.Select(stringselect);
 

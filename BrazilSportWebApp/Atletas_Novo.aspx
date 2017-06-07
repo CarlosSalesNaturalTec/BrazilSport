@@ -22,137 +22,213 @@
             background-image: url("images/fundo.jpg");
             background-repeat: repeat;
         }
+
+        #results {
+            float: right;
+            margin: 5px;
+            padding: 5px;
+            border: 1px solid;
+            background: #ccc;
+        }
     </style>
 
 </head>
 <body>
 
-    <div>
-        <header class="w3-container w3-green w3-center w3-padding-small">
-            <h4><strong>Novo Atleta</strong></h4>
-        </header>
-    </div>
-    
+
+
     <div class="w3-sidebar w3-bar-block w3-green w3-card-2" style="width: 150px">
         <br />
-        <button class="w3-bar-item w3-button tablink w3-hover-light-green" onclick="openLink(event, 'grupo1')"><i class="fa fa-user-o" aria-hidden="true"></i>&nbsp;Dados Pessoais</button>
-        <button class="w3-bar-item w3-button tablink w3-hover-light-green" onclick="openLink(event, 'grupo2')"><i class="fa fa-futbol-o" aria-hidden="true"></i>&nbsp;Clube</button>
-        <button class="w3-bar-item w3-button tablink w3-hover-light-green" onclick="openLink(event, 'grupo3')"><i class="fa fa-address-card-o" aria-hidden="true"></i>&nbsp;Documentos</button>
-        <button class="w3-bar-item w3-button tablink w3-hover-light-green" onclick="openLink(event, 'grupo4')"><i class="fa fa-check-square-o" aria-hidden="true"></i>&nbsp;Características</button>
+        <br />
+        <br />
+        <button class="w3-bar-item w3-button tablink w3-hover-light-blue w3-blue" onclick="openLink(event, 'grupo1')"><i class="fa fa-user-o" aria-hidden="true"></i>&nbsp;Dados Pessoais</button>
+        <button class="w3-bar-item w3-button tablink w3-hover-light-blue" onclick="openLink(event, 'grupo2')"><i class="fa fa-futbol-o" aria-hidden="true"></i>&nbsp;Clube</button>
+        <button class="w3-bar-item w3-button tablink w3-hover-light-blue" onclick="openLink(event, 'grupo3')"><i class="fa fa-check-square-o" aria-hidden="true"></i>&nbsp;Características</button>
+        <hr />
+        <div class="w3-center">
+            <button type="button" class="w3-btn w3-round w3-border w3-light-green w3-hover-red" onclick="cancelar()"><i class="fa fa-undo"></i>&nbsp;CANCELAR</button>
+            <p></p>
+            <button type="button" class="w3-btn w3-round w3-border w3-light-green w3-hover-blue" onclick="SalvarRegistro()" id="btSalvar"><i class="fa fa-save"></i>&nbsp;&nbsp;&nbsp;SALVAR&nbsp;&nbsp;&nbsp;&nbsp;</button>
+        </div>
     </div>
 
     <div style="margin-left: 150px">
 
+        <div>
+            <header class="w3-container w3-green w3-center w3-padding-small">
+                <h4><strong>Novo Atleta</strong></h4>
+            </header>
+        </div>
+
+
+
         <div id="grupo1" class="w3-container grupo w3-animate-left" style="display: block">
             <h3><i class="fa fa-user-o" aria-hidden="true"></i>&nbsp;Dados Pessoais</h3>
-            <hr /><br />
+            <hr />
+
+            <div class="w3-twothird">
+                <form class="form-horizontal">
+
+                    <fieldset>
+
+                        <div class="form-group">
+                            <label for="input_nome" class="col-md-2 control-label">Nome</label>
+                            <div class="col-md-8">
+                                <input type="text" class="form-control" id="input_nome">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="input_apelido" class="col-md-2 control-label">Apelido</label>
+                            <div class="col-md-3">
+                                <input type="text" class="form-control" id="input_apelido">
+                            </div>
+
+                            <label for="input_posicao" class="col-md-2 control-label">Posição</label>
+                            <div class="col-md-3">
+                                <input type="text" class="form-control" id="input_posicao">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="input_local" class="col-md-2 control-label">Local Nascimento</label>
+                            <div class="col-md-3">
+                                <input type="text" class="form-control" id="input_local">
+                            </div>
+
+                            <label for="input_nascimento" class="col-md-2 control-label">Nascimento</label>
+                            <div class="col-md-3">
+                                <input type="date" class="form-control" id="input_nascimento">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="input_nacionalidade" class="col-md-2 control-label">Nacionalidade</label>
+                            <div class="col-md-3">
+                                <input type="text" class="form-control" id="input_nacionalidade">
+                            </div>
+
+                            <label for="input_idioma" class="col-md-2 control-label">Idioma</label>
+                            <div class="col-md-3">
+                                <input type="text" class="form-control" id="input_idioma">
+                            </div>
+                        </div>
+                    </fieldset>
+                </form>
+            </div>
+
+            <!-- Camera -->
+            <div class="w3-third">
+                <div id="results"></div>
+                <div id="my_camera"></div>
+
+                <div class="row">
+                    <label for="filePicker">Carregar Foto:</label><br>
+                    <input type="file" id="filePicker">
+                </div>
+                <input id="Hidden1" name="fotouri" type="hidden" />
+            </div>
+            <!-- Camera -->
+
+        </div>
+
+
+
+        <div id="grupo2" class="w3-container grupo w3-animate-left" style="display: none">
+            <h3><i class="fa fa-futbol-o" aria-hidden="true"></i>&nbsp;Clube</h3>
+            <hr />
             <form class="form-horizontal">
 
                 <fieldset>
 
                     <div class="form-group">
+                        <label for="input6" class="col-md-2 control-label">Clube</label>
+                        <div class="col-md-8">
+                            <input type="text" class="form-control" id="input_clube">
+                        </div>
+                    </div>
 
-                        <label for="input1" class="col-md-1 control-label">Nome</label>
-                        <div class="col-md-6">
-                            <input type="text" class="form-control" id="input1">
+                    <div class="form-group">
+
+                        <label for="input7" class="col-md-2 control-label">Inicio Contrato</label>
+                        <div class="col-md-3">
+                            <input type="date" class="form-control" id="input_inicio">
                         </div>
 
-                        <label for="input2" class="col-md-1 control-label">Apelido</label>
+                        <label for="input8" class="col-md-2 control-label">Final Contrato</label>
                         <div class="col-md-3">
-                            <input type="text" class="form-control" id="input2">
+                            <input type="date" class="form-control" id="input_final">
                         </div>
 
                     </div>
 
                     <div class="form-group">
 
-                        <label for="input3" class="col-md-1 control-label">Nascimento</label>
-                        <div class="col-md-2">
-                            <input type="date" class="form-control" id="input3">
-                        </div>
-
-                        <label for="input4" class="col-md-1 control-label">Posição</label>
+                        <label for="input_cbf" class="col-md-2 control-label">Registro CBF</label>
                         <div class="col-md-3">
-                            <input type="text" class="form-control" id="input4">
+                            <input type="text" class="form-control" id="input_cbf">
                         </div>
 
-                        <label for="input5" class="col-md-1 control-label">Registro CBF</label>
-                        <div class="col-md-2">
-                            <input type="text" class="form-control" id="input5">
+                        <label for="input_direito" class="col-md-2 control-label">% Direito Econômico</label>
+                        <div class="col-md-3">
+                            <input type="number" class="form-control" id="input_direito" value="0">
                         </div>
-
                     </div>
 
                     <div class="form-group">
 
-                        <label for="input6" class="col-md-1 control-label">Clube</label>
+                        <label for="input_procura" class="col-md-2 control-label">Procuração</label>
                         <div class="col-md-3">
-                            <input type="text" class="form-control" id="input6">
+                            <input type="text" class="form-control" id="input_procura">
                         </div>
 
-                        <label for="input7" class="col-md-1 control-label">Inicio Contrato</label>
-                        <div class="col-md-2">
-                            <input type="date" class="form-control" id="input7">
-                        </div>
-
-                        <label for="input8" class="col-md-1 control-label">Final Contrato</label>
-                        <div class="col-md-2">
-                            <input type="date" class="form-control" id="input8">
-                        </div>
-
-                    </div>
-
-                    <hr />
-
-                    <div class="form-group">
-                        <div class="col-md-4 col-md-offset-1">
-                            <button type="button" class="w3-btn w3-round w3-border w3-red" onclick="cancelar()"><i class="fa fa-undo"></i>&nbsp;CANCELAR</button>
-                            <button type="button" class="w3-btn w3-round w3-border w3-green" onclick="SalvarRegistro()" id="btSalvar"><i class="fa fa-save"></i>&nbsp;&nbsp;&nbsp;SALVAR&nbsp;&nbsp;&nbsp;&nbsp;</button>
-                        </div>
                     </div>
 
                 </fieldset>
             </form>
         </div>
 
-        <div id="grupo2" class="w3-container grupo w3-animate-left" style="display: none">
-            <h3><i class="fa fa-futbol-o" aria-hidden="true"></i>&nbsp;Clube</h3>
-        </div>
-
         <div id="grupo3" class="w3-container grupo w3-animate-left" style="display: none">
-            <h3><i class="fa fa-address-card-o" aria-hidden="true"></i>&nbsp;Documentos</h3>
-        </div>
-
-        <div id="grupo4" class="w3-container grupo w3-animate-left" style="display: none">
             <h3><i class="fa fa-check-square-o" aria-hidden="true"></i>&nbsp;Características</h3>
+            <hr />
+            <form class="form-horizontal">
+                <fieldset>
+                    <div class="form-group">
+                        <label for="input_altura" class="col-md-2 control-label">Altura</label>
+                        <div class="col-md-3">
+                            <input type="number" class="form-control" id="input_altura" value="0">
+                        </div>
+
+                        <label for="input_peso" class="col-md-2 control-label">Peso</label>
+                        <div class="col-md-3">
+                            <input type="number" class="form-control" id="input_peso" value="0">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="input_chute" class="col-md-2 control-label">Chute</label>
+                        <div class="col-md-3">
+                            <input type="text" class="form-control" id="input_chute">
+                        </div>                      
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="input_chute" class="col-md-2 control-label">Características</label>
+                        <div class="col-md-8">
+                             <textarea class="form-control" rows="5" id="input_carac"></textarea>
+                        </div>                      
+                    </div>
+
+
+                </fieldset>
+            </form>
         </div>
 
     </div>
 
-    <script>
-        function openLink(evt, animName) {
-            var i, x, tablinks;
-            x = document.getElementsByClassName("grupo");
-            for (i = 0; i < x.length; i++) {
-                x[i].style.display = "none";
-            }
-            tablinks = document.getElementsByClassName("tablink");
-            for (i = 0; i < x.length; i++) {
-                tablinks[i].className = tablinks[i].className.replace(" w3-light-green", "");
-            }
-            document.getElementById(animName).style.display = "block";
-            evt.currentTarget.className += " w3-light-green";
-        }
-    </script>
-
-
-
-
-
-
-
     <!-- Scripts Diversos  -->
-    <script type="text/javascript" src="Scripts/codeAtleta_Novo.js"></script>
+    <script type="text/javascript" src="Scripts/codeAtleta_New.js"></script>
+    <script type="text/javascript" src="Scripts/webcam.js"></script>
 
 </body>
 </html>

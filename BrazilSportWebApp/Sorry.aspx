@@ -16,12 +16,10 @@
     <div class="w3-container w3-center w3-text-grey">
         
         <p><i class="fa fa-3x fa-exclamation-triangle" aria-hidden="true"></i></p>
-        <h1>Opa, não deu pra atender a sua solicitação!</h1>
+        <h1>Usuário desconectado!</h1>
         
         <p>
-            
             <a class="w3-button w3-green w3-round-large" href="Default.aspx" target="_parent">Login</a>&nbsp;&nbsp;
-            <a class="w3-button w3-green w3-round-large" href="Home.aspx"><i class="fa fa-home"></i></a>
         </p>
 
 

@@ -52,13 +52,22 @@ public class WebService : System.Web.Services.WebService
 
 
     [WebMethod]
-    public string AtletaSalvar(string param1, string param2, string param3, string param4, string param5, string param6, string param7, string param8)
+    public string AtletaSalvar(string param1, string param2, string param3, string param4, string param5, 
+        string param6, string param7, string param8, string param9, string param10, 
+        string param11, string param12, string param13, string param14, string param15,
+        string param16, string param17, string param18)
     {
         string url;
 
         OperacaoBanco operacao = new OperacaoBanco();
-        bool inserir = operacao.Insert(@"INSERT INTO tbl_Atletas (Nome, Apelido , posicao ) " +
-            "VALUES ('" + param1 + "', '" + param2 + "', '" + param4 + "')");
+        bool inserir = operacao.Insert("INSERT INTO tbl_Atletas (Nome, Apelido , posicao, Naturalidade , Nascimento, " +
+            "nacionalidade, idioma, clube, ContratoInicio, ContratoFinal, " +
+            "RegistroCBF, DireitoEcon, Procuracao, altura, peso, " +
+            "chute, Caracteristicas , FotoURI )" + 
+            "VALUES ('" + param1 + "', '" + param2 + "', '" + param3 + "', '" + param4 + "', getdate() " +
+            " , '" + param6 + "', '" + param7 + "', '" + param8 + "', getdate(), getdate() " +
+            " , '" + param11 + "', " + param12 + ", '" + param13 + "', " + param14 + ", " + param15 +
+            " , '" + param16 + "', '" + param17 + "', '" + param18 + "')");
         ConexaoBancoSQL.fecharConexao();
 
         if (inserir == true)

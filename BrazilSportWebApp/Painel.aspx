@@ -92,13 +92,13 @@
             <form class="w3-container">
                 <div class="w3-section w3-center">
                     <br />
-                    <i class="fa fa-3x fa-question-circle-o" aria-hidden="true"></i>
+                    <i class="fa fa-3x fa-exclamation-triangle" aria-hidden="true"></i>
                     <br />
                     <h3><strong>Confirma Saida?</strong> </h3>
                     <br />
                     <p>
-                        <button type="button" class="w3-button w3-round w3-border w3-blue" onclick="sair_cancel()">Não</button>&nbsp;&nbsp;&nbsp;
-                        <button type="button" class="w3-button w3-round w3-border w3-green" onclick="sair_exit()">Sim</button>
+                        <button type="button" class="w3-button w3-round w3-border w3-hover-blue" onclick="sair_cancel()">Não</button>&nbsp;&nbsp;&nbsp;
+                        <button type="button" class="w3-button w3-round w3-border w3-hover-green" onclick="sair_exit()">Sim</button>
                     </p>
                     <br />
                 </div>
