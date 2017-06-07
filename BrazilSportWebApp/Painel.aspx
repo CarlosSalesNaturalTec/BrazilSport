@@ -28,14 +28,14 @@
             <a href="#" class="w3-bar-item w3-btn w3-hover-green w3-right" onclick="sair()">Sair <i class="fa fa-sign-out"></i></a>
 
             <div class="w3-dropdown-hover w3-right">
-                <button class="w3-btn w3-hover-green">Relatórios</button>
+                <button class="w3-btn w3-hover-green"><i class="fa fa-line-chart" aria-hidden="true"></i>&nbsp;Relatórios</button>
                 <div class="w3-dropdown-content w3-bar-block w3-card-4">
                     <a href="#" class="w3-bar-item w3-button">Centros de Custos</a>
                 </div>
             </div>
 
             <div class="w3-dropdown-hover w3-right">
-                <button class="w3-btn w3-hover-green">Fnanceiro</button>
+                <button class="w3-btn w3-hover-green"><i class="fa fa-usd" aria-hidden="true"></i>&nbsp;Financeiro</button>
                 <div class="w3-dropdown-content w3-bar-block w3-card-4">
                     <a href="#" class="w3-bar-item w3-button">Contas a Pagar</a>
                     <a href="#" class="w3-bar-item w3-button">Contas a Receber</a>
@@ -43,7 +43,7 @@
             </div>
 
             <div class="w3-dropdown-hover w3-right">
-                <button class="w3-btn w3-hover-green">Clubes</button>
+                <button class="w3-btn w3-hover-green"><i class="fa fa-futbol-o" aria-hidden="true"></i>&nbsp;Clubes</button>
                 <div class="w3-dropdown-content w3-bar-block w3-card-4">
                     <a href="#" class="w3-bar-item w3-button">Cadastro de Clubes</a>
                     <a href="#" class="w3-bar-item w3-button">Pesquisa</a>
@@ -51,7 +51,7 @@
             </div>
 
             <div class="w3-dropdown-hover w3-right">
-                <button class="w3-btn w3-hover-green">Atletas</button>
+                <button class="w3-btn w3-hover-green"><i class="fa fa-user-o" aria-hidden="true"></i>&nbsp;Atletas</button>
                 <div class="w3-dropdown-content w3-bar-block w3-card-4">
                     <a href="Atletas_Listagem.aspx" target="iframe" class="w3-bar-item w3-button">Cadastro de Atletas</a>
                     <a href="#" class="w3-bar-item w3-button">Documentação</a>
