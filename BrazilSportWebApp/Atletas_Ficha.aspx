@@ -1,10 +1,13 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="Atletas_Novo.aspx.cs" Inherits="Atletas_Novo" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="Atletas_Ficha.aspx.cs" Inherits="Atletas_Ficha" %>
 
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <title>Cadastro de Atleta - BrazilSport</title>
+
+    <title>Ficha do Atleta</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
@@ -33,18 +36,24 @@
     </style>
 
 </head>
+
 <body>
 
     <div class="w3-sidebar w3-bar-block w3-green w3-card-2" style="width: 150px">
-        <br /><br /><br />
+        <br />
+        <br />
+        <br />
         <button id="bt1" class="w3-bar-item w3-button tablink w3-hover-light-blue w3-blue" onclick="openLink(event, 'grupo1')"><i class="fa fa-user-o" aria-hidden="true"></i>&nbsp;Dados Pessoais</button>
         <button id="bt2" class="w3-bar-item w3-button tablink w3-hover-light-blue" onclick="openLink(event, 'grupo2')"><i class="fa fa-futbol-o" aria-hidden="true"></i>&nbsp;Clube</button>
         <button id="bt3" class="w3-bar-item w3-button tablink w3-hover-light-blue" onclick="openLink(event, 'grupo3')"><i class="fa fa-check-square-o" aria-hidden="true"></i>&nbsp;Características</button>
         <hr />
+
         <div class="w3-center">
+            <asp:Label ID="lblApelido" runat="server"></asp:Label>
+            <hr />
             <button type="button" class="w3-btn w3-round w3-border w3-light-green w3-hover-red" onclick="cancelar()"><i class="fa fa-undo"></i>&nbsp;CANCELAR</button>
             <p></p>
-            <button type="button" class="w3-btn w3-round w3-border w3-light-green w3-hover-blue" onclick="SalvarRegistro()" id="btSalvar"><i class="fa fa-save"></i>&nbsp;&nbsp;&nbsp;SALVAR&nbsp;&nbsp;&nbsp;&nbsp;</button>
+            <button type="button" class="w3-btn w3-round w3-border w3-light-green w3-hover-blue" onclick="AlterarRegistro()" id="btSalvar"><i class="fa fa-save"></i>&nbsp;&nbsp;&nbsp;SALVAR&nbsp;&nbsp;&nbsp;&nbsp;</button>
             <p></p>
             <div id="divhidden" class="w3-container w3-padding w3-center" style="display: none">
                 <i class="fa fa-cog fa-spin fa-2x fa-fw"></i>
@@ -56,10 +65,9 @@
 
         <div>
             <header class="w3-container w3-green w3-center w3-padding-small">
-                <h4><strong>Novo Atleta</strong></h4>
+                <h4><strong>Ficha do Atleta</strong></h4>
             </header>
         </div>
-
 
         <!-- DADOS PESSOAIS -->
         <div id="grupo1" class="w3-container grupo w3-animate-left" style="display: block">
@@ -105,7 +113,7 @@
                         <div class="form-group">
                             <label for="input_nacionalidade" class="col-md-2 control-label">Nacionalidade</label>
                             <div class="col-md-3">
-                                <input type="text" class="form-control" id="input_nacionalidade" value="BRASILEIRA">
+                                <input type="text" class="form-control" id="input_nacionalidade">
                             </div>
 
                             <label for="input_idioma" class="col-md-2 control-label">Idioma</label>
@@ -125,14 +133,11 @@
                         <button class="w3-btn w3-light-green w3-hover-green" onclick="classeBt2()">AVANÇAR</button>
                     </div>
                 </div>
-
-
             </div>
 
             <!-- Camera -->
             <div class="w3-third">
                 <div id="results"></div>
-                <div id="my_camera"></div>
 
                 <div class="row">
                     <label for="filePicker">Foto ( 200x300pixels - Tam.Máx.:75Kb )</label><br>
@@ -188,6 +193,7 @@
                     </div>
 
                     <div class="form-group">
+
                         <label for="input_procura" class="col-md-2 control-label">Procuração</label>
                         <div class="col-md-3">
                             <input type="text" class="form-control" id="input_procura">
@@ -195,8 +201,8 @@
                     </div>
 
                 </fieldset>
-            </form>
 
+            </form>
             <div>
                 <div class="col-md-2"></div>
                 <div class="col-md-1">
@@ -209,7 +215,7 @@
         </div>
 
 
-
+        <!-- CARACTERISTICAS -->
         <div id="grupo3" class="w3-container grupo w3-animate-left" style="display: none">
             <h3><i class="fa fa-check-square-o" aria-hidden="true"></i>&nbsp;Características</h3>
             <hr />
@@ -245,10 +251,8 @@
                         </div>
                     </div>
 
-
                 </fieldset>
             </form>
-
             <div>
                 <div class="col-md-2"></div>
                 <div class="col-md-1">
@@ -256,17 +260,21 @@
 
                 </div>
                 <div class="col-md-1">
-                    <button class="w3-btn w3-light-green w3-hover-green" onclick="SalvarRegistro()">CONCLUIR</button>
+                    <button class="w3-btn w3-light-green w3-hover-green" onclick="AlterarRegistro()">CONCLUIR</button>
                 </div>
             </div>
-
         </div>
-
     </div>
 
-    <!-- Scripts Diversos  -->
-    <script type="text/javascript" src="Scripts/codeAtleta_Novo.js"></script>
+    <!-- auxiliares -->
+    <input id="IDHidden" name="IDHidden" type="hidden" />
+    <asp:Literal ID="Literal1" runat="server"></asp:Literal>
+
+    <!-- Scripts diversos  -->
+
     <script type="text/javascript" src="Scripts/webcam.js"></script>
+    <script type="text/javascript" src="Scripts/codeAtleta_Novo.js"></script>
 
 </body>
+
 </html>

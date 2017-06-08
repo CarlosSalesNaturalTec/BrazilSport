@@ -59,7 +59,7 @@
                 </div>
             </div>
 
-            <a href="Home.aspx" target="iframe" class="w3-bar-item w3-btn w3-hover-green w3-right"><i class="fa fa-home"></i></a>
+            <a href="Home.aspx" target="iframe" class="w3-bar-item w3-btn w3-hover-green w3-right"><i class="fa fa-home"></i>&nbsp;Home</a>
 
         </div>
     </div>
@@ -86,19 +86,19 @@
     <!-- Modal LogOff -->
     <div id="DivLogOut" class="w3-modal">
         <div class="w3-modal-content w3-card-4 w3-animate-left" style="max-width: 400px">
-
-          
-
             <form class="w3-container">
                 <div class="w3-section w3-center">
+                    <header class="w3-container w3-red w3-center">
+                        <h4><strong>Atenção</strong></h4>
+                    </header>
                     <br />
                     <i class="fa fa-3x fa-exclamation-triangle" aria-hidden="true"></i>
                     <br />
                     <h3><strong>Confirma Saida?</strong> </h3>
                     <br />
                     <p>
-                        <button type="button" class="w3-button w3-round w3-border w3-hover-blue" onclick="sair_cancel()">Não</button>&nbsp;&nbsp;&nbsp;
-                        <button type="button" class="w3-button w3-round w3-border w3-hover-green" onclick="sair_exit()">Sim</button>
+                        <button type="button" class="w3-btn w3-round w3-border w3-hover-blue" onclick="sair_cancel()">Não</button>&nbsp;&nbsp;&nbsp;
+                        <button type="button" class="w3-btn w3-round w3-border w3-hover-red" onclick="sair_exit()">Sim</button>
                     </p>
                     <br />
                 </div>

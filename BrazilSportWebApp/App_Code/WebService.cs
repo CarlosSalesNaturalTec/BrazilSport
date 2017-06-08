@@ -50,7 +50,6 @@ public class WebService : System.Web.Services.WebService
 
     }
 
-
     [WebMethod]
     public string AtletaSalvar(string param1, string param2, string param3, string param4, string param5, 
         string param6, string param7, string param8, string param9, string param10, 
@@ -64,9 +63,9 @@ public class WebService : System.Web.Services.WebService
             "nacionalidade, idioma, clube, ContratoInicio, ContratoFinal, " +
             "RegistroCBF, DireitoEcon, Procuracao, altura, peso, " +
             "chute, Caracteristicas , FotoURI )" + 
-            "VALUES ('" + param1 + "', '" + param2 + "', '" + param3 + "', '" + param4 + "', getdate() " +
-            " , '" + param6 + "', '" + param7 + "', '" + param8 + "', getdate(), getdate() " +
-            " , '" + param11 + "', " + param12 + ", '" + param13 + "', " + param14 + ", " + param15 +
+            "VALUES ('" + param1 + "', '" + param2 + "', '" + param3 + "', '" + param4 + "', '" + param5 + 
+            "' , '" + param6 + "', '" + param7 + "', '" + param8 + "', '" + param9 + "', '" + param10 + 
+            "' , '" + param11 + "', " + param12 + ", '" + param13 + "', " + param14 + ", " + param15 +
             " , '" + param16 + "', '" + param17 + "', '" + param18 + "')");
         ConexaoBancoSQL.fecharConexao();
 
@@ -81,6 +80,72 @@ public class WebService : System.Web.Services.WebService
 
         return url;
     }
+
+    [WebMethod]
+    public string AtletaExcluir(string param1)
+    {
+        string url;
+
+        OperacaoBanco operacao3 = new OperacaoBanco();
+        Boolean deletar = operacao3.Delete("delete from tbl_Atletas where ID_Atleta =" + param1);
+        ConexaoBancoSQL.fecharConexao();
+
+        if (deletar == true)
+        {
+            url = "Atletas_Listagem.aspx";
+        }
+        else
+        {
+            url = "Sorry.aspx";
+        }
+
+        return url;
+    }
+
+    [WebMethod]
+    public string AtletaAlterar(string param1, string param2, string param3, string param4, string param5,
+       string param6, string param7, string param8, string param9, string param10,
+       string param11, string param12, string param13, string param14, string param15,
+       string param16, string param17, string param18, string param19)
+    {
+        string url;
+
+        OperacaoBanco operacao = new OperacaoBanco();
+        bool inserir = operacao.Insert("update tbl_Atletas set " +
+            "Nome= '" + param1 + "', " +
+            "Apelido = '" + param2 + "', " +
+            "posicao = '" + param3 + "', " +
+            "Naturalidade = '" + param4 + "', " +
+            "Nascimento = '" + param5 + "', " +
+            "nacionalidade = '" + param6 + "', " +
+            "idioma = '" + param7 + "', " +
+            "clube = '" + param8 + "', " +
+            "ContratoInicio = '" + param9 + "', " +
+            "ContratoFinal = '" + param10 + "', " +
+            "RegistroCBF = '" + param11 + "', " +
+            "DireitoEcon = " + param12 + ", " +
+            "Procuracao = '" + param13 + "', " +
+            "altura = " + param14 + ", " +
+            "peso = " + param15 + ", " +
+            "chute= '" + param16 + "', " +
+            "Caracteristicas = '" + param17 + "', " +
+            "FotoURI = '" + param18 +
+            "' where ID_Atleta = " + param19 );
+
+        ConexaoBancoSQL.fecharConexao();
+
+        if (inserir == true)
+        {
+            url = "Atletas_Listagem.aspx";
+        }
+        else
+        {
+            url = "Sorry.aspx";
+        }
+
+        return url;
+    }
+
 }
 
 public class ConexaoBancoSQL

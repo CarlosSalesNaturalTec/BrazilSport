@@ -58,7 +58,7 @@
         </div>
     </div>
 
-    <script src="Scripts/jquery-3.1.1.min.js" type="text/javascript"></script>
+    <script src="Scripts/jquery-3.2.1.min.js" type="text/javascript"></script>
     <script src="Scripts/codeLogin.js"></script>
 
 </body>

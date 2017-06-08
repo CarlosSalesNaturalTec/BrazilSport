@@ -9,14 +9,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-   
+
+    <style>
+        body {
+            background-image: url("images/fundo.jpg");
+            background-repeat: repeat;
+        }
+    </style>
+
 </head>
 <body>
     <div class="w3-container">
-
-        <img src="images/fundo.jpg" class="w3-display-middle" />
         <img src="images/brazilsport_logo.png" class="w3-display-middle" />
-
     </div>
 </body>
 </html>
