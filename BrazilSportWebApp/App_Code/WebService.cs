@@ -163,7 +163,7 @@ public class ConexaoBancoSQL
     public ConexaoBancoSQL()
     {
         // *** STRING DE CONEXÃO COM BANCO DE DADOS - Atenção! Alterar dados conforme seu servidor
-        stringconnection1 = "Server=tcp:serverbrazilsport.database.windows.net,1433;Initial Catalog=dbbrazilsport;Persist Security Info=False;User ID=admserver;Password=pwd@1973;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;";
+        stringconnection1 = "Server=tcp:serverbrazilsport.database.windows.net,1433;Initial Catalog=dbBrasilSport;Persist Security Info=False;User ID=admserver;Password=a123456@;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;";
         try
         {
             tentarAbrirConexaoRemota();
